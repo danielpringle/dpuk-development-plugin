@@ -1,0 +1,37 @@
+{
+    "name" 			: "dpuk/wordpress-developer-plugin",
+    "description" 	: "Development Plugin improving php debugging and error handling.",
+    "type"          : "project",
+    "keywords" 		: ["wordpress", "wp", "plugin"],
+    "homepage" 		: "https://danielpringle.co.uk",
+    "license" 		: "GPL-2.0+",
+    "authors": [
+        {
+            "name" 	: "Dan",
+            "email" : "dan@danielpringle.co.uk"
+        }
+    ],
+    "require": {
+        "php" : ">=5.6.0"
+    },
+    "require-dev": {
+        "kint-php/kint": "dev-master",
+        "filp/whoops": "^2.14"
+    },
+    "autoload" : {
+        "classmap": [],
+        "files": [
+            "src/support/exceptions.php",
+            "src/kint_use_examples.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "minimum-stability": "dev"
+}
