@@ -12,11 +12,11 @@
         }
     ],
     "require": {
-        "php" : ">=5.6.0"
+        "php" : ">=7.4"
     },
     "require-dev": {
-        "kint-php/kint": "dev-master",
-        "filp/whoops": "^2.14"
+        "kint-php/kint": "^5.0",
+        "filp/whoops": "^2.15"
     },
     "autoload" : {
         "classmap": [],
@@ -32,6 +32,5 @@
     },
     "config": {
         "vendor-dir": "vendor"
-    },
-    "minimum-stability": "dev"
+    }
 }

@@ -14,28 +14,38 @@ use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
 
 /**
- * One option is to load Whoops when the `init` event fires.
- * But if an error occurs _before_ that event, the ugly PHP
- * error wrapper will display.
- *
- * Therefore, another option is to simply call `load_whoops()` at the
- * bottom of this file.  Then it loads at the start of the plugin.
- */
-
-add_action( 'init', __NAMESPACE__ . '\load_whoops', 1 );
-/**
- * Load Whoops.
+ * Load Whoops error handler.
+ * 
+ * Registers Whoops to replace PHP's default error display with pretty,
+ * interactive error pages that include stack traces and variable inspection.
+ * 
+ * Loads immediately (not on init hook) to catch errors that occur before
+ * WordPress hooks fire. This ensures we get pretty error pages even for
+ * early errors during plugin/theme loading.
+ * 
+ * The error handler is configured to use VS Code as the editor for
+ * opening files directly from the error page (default, can be changed via DPUK_DEV_EDITOR constant).
  *
  * @since 1.0.0
  *
  * @return void
  */
 function load_whoops() {
+	// Check if Whoops classes are available
+	if ( ! class_exists( '\Whoops\Run' ) || ! class_exists( '\Whoops\Handler\PrettyPageHandler' ) ) {
+		return;
+	}
+	
 	$whoops     = new Run();
 	$error_page = new PrettyPageHandler();
-	$error_page->setEditor( 'sublime' );
+	
+	// Make editor configurable via constant
+	$editor = defined( '\DPUK_DEV_EDITOR' ) ? constant( '\DPUK_DEV_EDITOR' ) : 'vscode';
+	$error_page->setEditor( $editor );
+	
 	$whoops->pushHandler( $error_page );
 	$whoops->register();
 }
 
+// Load immediately for early error handling
 load_whoops();

@@ -1,6 +1,10 @@
 <?php
 /**
- * Kint test file
+ * Kint Usage Examples
+ *
+ * Example functions demonstrating how to use Kint for debugging.
+ * These functions are disabled by default (commented out action hooks).
+ * Uncomment the action hooks to enable specific examples.
  *
  * @package     DPUKDevloper
  * @since       1.0.0
@@ -10,41 +14,46 @@
  */
 namespace DPUKDevloper;
 
- add_action( 'wp_loaded', __NAMESPACE__ . '\demo' ); 
 /**
- * Demo - testing purposes.
+ * Simple variable debugging example.
+ *
+ * Demonstrates basic usage of Kint's d() function to debug a variable.
+ * Uncomment the action hook below to enable this example.
  *
  * @since 1.0.0
- *
  * @return void
  */
-
+// add_action( 'wp_loaded', __NAMESPACE__ . '\demo' );
 function demo() {
-
-	$user_id =10;
-
+	$user_id = 10;
 	d( $user_id );
-
 }
 
-
-
-//add_action( 'wp_loaded', __NAMESPACE__ . '\example_uses_with_kint' );
 /**
- * Example uses with Kint
+ * Advanced Kint usage examples.
+ *
+ * Demonstrates various Kint debugging techniques including:
+ * - Debugging WordPress functions
+ * - Using Kint in loops
+ * - Stack traces
+ *
+ * Uncomment the action hook below to enable this example.
  *
  * @since 1.0.0
- *
  * @return void
  */
+// add_action( 'wp_loaded', __NAMESPACE__ . '\example_uses_with_kint' );
 function example_uses_with_kint() {
-	//d( get_post_types());
+	// Debug WordPress post types
+	// d( get_post_types() );
 
-	//d( get_all_post_type_supports( 'post'));
+	// Debug post type supports
+	// d( get_all_post_type_supports( 'post' ) );
 
-	for( $number_of_loops = 0; $number_of_loops <10; $number_of_loops++ ){
-		\Kint::trace();   // use '\' when in a namespace to get back to the global space 
-		die($number_of_loops);
+	// Example: Debugging in a loop with stack trace
+	// Note: The die() is for demonstration only - remove in production code
+	for ( $number_of_loops = 0; $number_of_loops < 10; $number_of_loops++ ) {
+		\Kint::trace(); // Use '\' when in a namespace to access global Kint
+		// die( $number_of_loops ); // Uncomment to stop execution at each iteration
 	}
-
 }
