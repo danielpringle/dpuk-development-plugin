@@ -15,8 +15,8 @@
         "php" : ">=7.4"
     },
     "require-dev": {
-        "kint-php/kint": "^5.0",
-        "filp/whoops": "^2.15"
+        "kint-php/kint": "^6.1",
+        "filp/whoops": "^2.18"
     },
     "autoload" : {
         "classmap": [],

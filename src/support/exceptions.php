@@ -36,14 +36,23 @@ function load_whoops() {
 		return;
 	}
 	
-	$whoops     = new Run();
+	// Instantiate the main Whoops error handler
+	$whoops = new Run();
+
+	// Create a handler that renders pretty, interactive error pages in the browser
 	$error_page = new PrettyPageHandler();
-	
-	// Make editor configurable via constant
+
+	// Allow the editor used for "open in editor" links to be set via a constant
+	// Supported values: 'vscode', 'phpstorm', 'sublime', etc.
+	// Example: define('DPUK_DEV_EDITOR', 'phpstorm'); in wp-config.php
 	$editor = defined( '\DPUK_DEV_EDITOR' ) ? constant( '\DPUK_DEV_EDITOR' ) : 'vscode';
 	$error_page->setEditor( $editor );
-	
+
+	// Register the pretty page handler with Whoops (can add more handlers if needed)
 	$whoops->pushHandler( $error_page );
+
+	// Register Whoops as the global error and exception handler
+	// This will catch all uncaught errors and exceptions and display them using the pretty page
 	$whoops->register();
 }
 
