@@ -6,13 +6,13 @@
  * These functions are disabled by default (commented out action hooks).
  * Uncomment the action hooks to enable specific examples.
  *
- * @package     DPUKDevloper
+ * @package     DPUKDevDebugger
  * @since       1.0.0
  * @author      Dan Pringle
  * @link        http://www.danielpringle.co.uk
  * @license     GNU General Public License 2.0+
  */
-namespace DPUKDevloper;
+namespace DPUKDevDebugger;
 
 // Attach runners to the hook (toggle as needed)
 //add_action('wp_loaded', __NAMESPACE__ . '\run_kint_general_examples');

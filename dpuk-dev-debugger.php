@@ -1,40 +1,38 @@
 <?php
 /**
- * DPUK Development Plugin
+ * DPUK Dev Debugger
  *
- * @package     DPUKDevloper
+ * @package     DPUKDevDebugger
  * @author      Dan Pringle
  * @license     GPL-2.0+
  *
  * @wordpress-plugin
- * Plugin Name: DPUK Development Plugin
- * Plugin URI:  http://danielpringle.co.uk
- * Description: Development Sandbox plugin. This plugin displays errors in a more user friendly way.
- * Version:     1.0.0
+ * Plugin Name: DPUK Dev Debugger
+ * Plugin URI:  https://github.com/danielpringle/dpuk-dev-debugger
+ * Description: Enhanced debugging and error handling for WordPress development using Kint and Whoops.
+ * Version:     2.0.0
  * Author:      Daniel Pringle
  * Author URI:  http://danielpringle.co.uk
- * Text Domain: DPUKDevloper
+ * Text Domain: dpuk-dev-debugger
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
-namespace DPUKDevloper;
+namespace DPUKDevDebugger;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Cheatin&#8217; uh?' );
 }
 
-
-// Plugin constants
-if ( ! defined( __NAMESPACE__ . '\PLUGIN_VERSION' ) ) {
-	define( __NAMESPACE__ . '\PLUGIN_VERSION', '1.0.0' );
+if ( ! defined( 'DPUK_DEV_DEBUGGER_PLUGIN_VERSION' ) ) {
+    define( 'DPUK_DEV_DEBUGGER_PLUGIN_VERSION', '2.0.0' );
 }
 
-if ( ! defined( __NAMESPACE__ . '\PLUGIN_DIR' ) ) {
-	define( __NAMESPACE__ . '\PLUGIN_DIR', __DIR__ );
+if ( ! defined( 'DPUK_DEV_DEBUGGER_PLUGIN_DIR' ) ) {
+    define( 'DPUK_DEV_DEBUGGER_PLUGIN_DIR', __DIR__ );
 }
 
-if ( ! defined( __NAMESPACE__ . '\PLUGIN_URL' ) ) {
-	define( __NAMESPACE__ . '\PLUGIN_URL', plugins_url( '', __FILE__ ) );
+if ( ! defined( 'DPUK_DEV_DEBUGGER_PLUGIN_URL' ) ) {
+    define( 'DPUK_DEV_DEBUGGER_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 }
 
 /**
@@ -45,12 +43,12 @@ if ( ! defined( __NAMESPACE__ . '\PLUGIN_URL' ) ) {
  */
 function is_development_environment() {
 	// Check wp-config constant first
-	if ( defined( '\WP_ENVIRONMENT_TYPE' ) ) {
-		return in_array( \WP_ENVIRONMENT_TYPE, [ 'local', 'development' ], true );
+	if ( defined( 'WP_ENVIRONMENT_TYPE' ) ) {
+		return in_array( WP_ENVIRONMENT_TYPE, [ 'local', 'development' ], true );
 	}
-	
+
 	// Fallback to WP_DEBUG
-	return defined( '\WP_DEBUG' ) && \WP_DEBUG;
+	return defined( 'WP_DEBUG' ) && WP_DEBUG;
 }
 
 /**
@@ -58,18 +56,17 @@ function is_development_environment() {
  * 
  * This plugin runs by default. To disable it, add this to wp-config.php:
  * 
- *     define( 'DPUK_DEV_PLUGIN_ENABLED', false );
+ *     define( 'DPUK_DEV_DEBUGGER_ENABLED', false );
  * 
  * Behavior:
  * - If constant is NOT defined → Plugin runs (default behavior)
  * - If constant is defined as true → Plugin runs
  * - If constant is defined as false → Plugin does NOT run
  * 
- * Note: The leading backslash (\DPUK_DEV_PLUGIN_ENABLED) is required because
- * we're inside a namespace and need to reference the global constant.
+ * Note: Constants should be referenced without a leading backslash, even inside a namespace.
  */
 
-if ( ( ! defined( '\DPUK_DEV_PLUGIN_ENABLED' ) || \DPUK_DEV_PLUGIN_ENABLED ) && is_development_environment() ) {
+if ( ( ! defined( 'DPUK_DEV_DEBUGGER_ENABLED' ) || DPUK_DEV_DEBUGGER_ENABLED ) && is_development_environment() ) {
 	$autoloader = __DIR__ . '/vendor/autoload.php';
 	if ( file_exists( $autoloader ) ) {
 		require_once( $autoloader );
@@ -80,7 +77,7 @@ if ( ( ! defined( '\DPUK_DEV_PLUGIN_ENABLED' ) || \DPUK_DEV_PLUGIN_ENABLED ) && 
 /**
  * Launch function - placeholder for plugin functionality
  *
- * @since 1.0.0
+ * @since 2.0.0
  * @return void
  */
 function launch() {
@@ -90,7 +87,7 @@ function launch() {
 /**
  * Plugin activation hook.
  *
- * @since 1.0.0
+ * @since 2.0.0
  * @return void
  */
 function activate() {
@@ -100,7 +97,7 @@ function activate() {
 /**
  * Plugin deactivation hook.
  *
- * @since 1.0.0
+ * @since 2.0.0
  * @return void
  */
 function deactivate() {

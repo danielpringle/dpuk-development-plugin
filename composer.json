@@ -1,9 +1,9 @@
 {
-    "name" 			: "dpuk/wordpress-developer-plugin",
+    "name" 			: "dpuk/dpuk-dev-debugger",
     "description" 	: "Development Plugin improving php debugging and error handling.",
     "type"          : "project",
     "keywords" 		: ["wordpress", "wp", "plugin"],
-    "homepage": "https://github.com/danielpringle/dpuk-development-plugin",
+    "homepage"      : "https://github.com/danielpringle/dpuk-dev-debugger",
     "license" 		: "GPL-2.0+",
     "authors": [
         {

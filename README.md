@@ -1,6 +1,6 @@
-# WordPress Development Plugin
+# DPUK Dev Debugger
 
-Use this plugin to build and test constructs. It provides enhanced debugging tools and error handling for WordPress development.
+A development-only WordPress plugin providing enhanced debugging, error pages, and code experimentation utilities.
 
 ## Features
 
@@ -23,14 +23,14 @@ This plugin includes the following features:
 1. Download the plugin
 2. Place it in your `wp-content/plugins/` folder
 3. Extract it (if zipped)
-4. Navigate to the plugin folder in terminal: `cd wp-content/plugins/dpuk-development-plugin`
+4. Navigate to the plugin folder in terminal: `cd wp-content/plugins/dpuk-dev-debugger`
 5. Run `composer install` to install dependencies
 
 ### Installation from GitHub
 
 1. Navigate to `wp-content/plugins/` in your terminal
-2. Clone the repository: `git@github.com:danielpringle/dpuk-development-plugin.git`
-3. Navigate into the plugin folder: `cd dpuk-development-plugin`
+2. Clone the repository: `git@github.com:danielpringle/dpuk-dev-debugger.git`
+3. Navigate into the plugin folder: `cd dpuk-dev-debugger`
 4. Run `composer install` to install dependencies
 
 After installation, the `vendor` folder will be created in the plugin root, containing Whoops, Kint, and the autoloader.
@@ -47,7 +47,7 @@ Run `composer update` to update dependencies
 The plugin runs by default. To disable it, add this to your `wp-config.php`:
 
 ```php
-define( 'DPUK_DEV_PLUGIN_ENABLED', false );
+define( 'DPUK_DEV_DEBUGGER_ENABLED', false );
 ```
 
 ### Configure Editor
@@ -58,16 +58,16 @@ Add this to your `wp-config.php` to change the editor:
 
 ```php
 // Use VS Code (default)
-define( 'DPUK_DEV_EDITOR', 'vscode' );
+define( 'DPUK_DEV_DEBUGGER_EDITOR', 'vscode' );
 
 // Or use PhpStorm
-define( 'DPUK_DEV_EDITOR', 'phpstorm' );
+define( 'DPUK_DEV_DEBUGGER_EDITOR', 'phpstorm' );
 
 // Or use Sublime Text
-define( 'DPUK_DEV_EDITOR', 'sublime' );
+define( 'DPUK_DEV_DEBUGGER_EDITOR', 'sublime' );
 
 // Or use Atom
-define( 'DPUK_DEV_EDITOR', 'atom' );
+define( 'DPUK_DEV_DEBUGGER_EDITOR', 'atom' );
 ```
 
 **Supported editors:**
@@ -90,7 +90,7 @@ When an error occurs, you'll see a beautiful error page with:
 - Full stack trace
 - Variable inspection
 - File and line numbers
-- "Open in Editor" links (configured via `DPUK_DEV_EDITOR` constant)
+- "Open in Editor" links (configured via `DPUK_DEV_DEBUGGER_EDITOR` constant)
 
 ### Kint Debugging
 
@@ -138,7 +138,7 @@ You can enable or disable a wide range of Kint-powered debug examples by editing
 
 ### Adding Custom Functionality
 
-Add your custom code to the `launch()` function in `dpuk-development-plugin.php`:
+Add your custom code to the `launch()` function in `dpuk-dev-debugger.php`:
 
 ```php
 function launch() {

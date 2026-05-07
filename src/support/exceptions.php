@@ -2,13 +2,13 @@
 /**
  * Exception handling
  *
- * @package     DPUKDevloper
+ * @package     DPUKDevDebugger
  * @since       1.0.0
  * @author      Dan Pringle
  * @link        http://www.danielpringle.co.uk
  * @license     GNU General Public License 2.0+
  */
-namespace DPUKDevloper;
+namespace DPUKDevDebugger;
 
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
@@ -44,8 +44,8 @@ function load_whoops() {
 
 	// Allow the editor used for "open in editor" links to be set via a constant
 	// Supported values: 'vscode', 'phpstorm', 'sublime', etc.
-	// Example: define('DPUK_DEV_EDITOR', 'phpstorm'); in wp-config.php
-	$editor = defined( '\DPUK_DEV_EDITOR' ) ? constant( '\DPUK_DEV_EDITOR' ) : 'vscode';
+	// Example: define('DPUK_DEV_DEBUGGER_EDITOR', 'phpstorm'); in wp-config.php
+	$editor = defined( 'DPUK_DEV_DEBUGGER_EDITOR' ) ? constant( 'DPUK_DEV_DEBUGGER_EDITOR' ) : 'vscode';
 	$error_page->setEditor( $editor );
 
 	// Register the pretty page handler with Whoops (can add more handlers if needed)
