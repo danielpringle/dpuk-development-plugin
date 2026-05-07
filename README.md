@@ -1,7 +1,5 @@
 # WordPress Development Plugin
 
-This repo is the starter plugin for [danielpringle.co.uk](http://danielpringle.co.uk).
-
 Use this plugin to build and test constructs. It provides enhanced debugging tools and error handling for WordPress development.
 
 ## Features
@@ -31,11 +29,16 @@ This plugin includes the following features:
 ### Installation from GitHub
 
 1. Navigate to `wp-content/plugins/` in your terminal
-2. Clone the repository: `git clone https://github.com/your-username/dpuk-development-plugin.git`
+2. Clone the repository: `git@github.com:danielpringle/dpuk-development-plugin.git`
 3. Navigate into the plugin folder: `cd dpuk-development-plugin`
 4. Run `composer install` to install dependencies
 
 After installation, the `vendor` folder will be created in the plugin root, containing Whoops, Kint, and the autoloader.
+
+### Composer updates
+
+Run `composer update` to update dependencies
+
 
 ## Configuration
 
@@ -131,6 +134,8 @@ for( $number_of_loops = 0; $number_of_loops < 10; $number_of_loops++ ){
 }
 ```
 
+You can enable or disable a wide range of Kint-powered debug examples by editing the arrays in `src/kint_use_examples.php`. Just add or remove function names from the arrays to control which examples run.
+
 ### Adding Custom Functionality
 
 Add your custom code to the `launch()` function in `dpuk-development-plugin.php`:
@@ -150,6 +155,8 @@ function launch() {
 - Whoops and Kint are loaded automatically via the autoloader
 - This plugin is intended for development environments only
 
+**Warning:** Do not use this plugin on production sites, as it exposes detailed error information to the browser.
+
 ## Resources
 
 - [Composer Documentation](https://getcomposer.org/doc/)
@@ -157,6 +164,3 @@ function launch() {
 - [Whoops Documentation](https://packagist.org/packages/filp/whoops)
 - [Packagist](https://packagist.org/)
 
-## Contributions
-
-Contributions are welcome! Please feel free to submit a Pull Request.

@@ -3,11 +3,11 @@
     "description" 	: "Development Plugin improving php debugging and error handling.",
     "type"          : "project",
     "keywords" 		: ["wordpress", "wp", "plugin"],
-    "homepage" 		: "https://danielpringle.co.uk",
+    "homepage": "https://github.com/danielpringle/dpuk-development-plugin",
     "license" 		: "GPL-2.0+",
     "authors": [
         {
-            "name" 	: "Dan",
+            "name" 	: "Dan Pringle",
             "email" : "dan@danielpringle.co.uk"
         }
     ],
