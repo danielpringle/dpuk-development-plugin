@@ -1,38 +1,38 @@
 <?php
 /**
- * DPUK Dev Debugger
+ * DPUK WP Local Debug
  *
- * @package     DPUKDevDebugger
+ * @package     DPUK/WPLocalDebug
  * @author      Dan Pringle
  * @license     GPL-2.0+
  *
  * @wordpress-plugin
- * Plugin Name: DPUK Dev Debugger
+ * Plugin Name: WP Local Debug
  * Plugin URI:  https://github.com/danielpringle/dpuk-dev-debugger
  * Description: Enhanced debugging and error handling for WordPress development using Kint and Whoops.
  * Version:     2.0.0
  * Author:      Daniel Pringle
  * Author URI:  http://danielpringle.co.uk
- * Text Domain: dpuk-dev-debugger
+ * Text Domain: wp-local-debug
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
-namespace DPUKDevDebugger;
+namespace DPUK\WPLocalDebug;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Cheatin&#8217; uh?' );
 }
 
-if ( ! defined( 'DPUK_DEV_DEBUGGER_PLUGIN_VERSION' ) ) {
-    define( 'DPUK_DEV_DEBUGGER_PLUGIN_VERSION', '2.0.0' );
+if ( ! defined( 'DPUK_LOCAL_DEBUG_VERSION' ) ) {
+    define( 'DPUK_LOCAL_DEBUG_VERSION', '2.0.0' );
 }
 
-if ( ! defined( 'DPUK_DEV_DEBUGGER_PLUGIN_DIR' ) ) {
-    define( 'DPUK_DEV_DEBUGGER_PLUGIN_DIR', __DIR__ );
+if ( ! defined( 'DPUK_LOCAL_DEBUG_DIR' ) ) {
+    define( 'DPUK_LOCAL_DEBUG_DIR', __DIR__ );
 }
 
-if ( ! defined( 'DPUK_DEV_DEBUGGER_PLUGIN_URL' ) ) {
-    define( 'DPUK_DEV_DEBUGGER_PLUGIN_URL', plugins_url( '', __FILE__ ) );
+if ( ! defined( 'DPUK_LOCAL_DEBUG_URL' ) ) {
+    define( 'DPUK_LOCAL_DEBUG_URL', plugins_url( '', __FILE__ ) );
 }
 
 /**

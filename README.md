@@ -1,4 +1,4 @@
-# DPUK Dev Debugger
+# DPUK WP Local Debugger
 
 A development-only WordPress plugin providing enhanced debugging, error pages, and code experimentation utilities.
 
@@ -23,14 +23,14 @@ This plugin includes the following features:
 1. Download the plugin
 2. Place it in your `wp-content/plugins/` folder
 3. Extract it (if zipped)
-4. Navigate to the plugin folder in terminal: `cd wp-content/plugins/dpuk-dev-debugger`
+4. Navigate to the plugin folder in terminal: `cd wp-content/plugins/wp-local-debug`
 5. Run `composer install` to install dependencies
 
 ### Installation from GitHub
 
 1. Navigate to `wp-content/plugins/` in your terminal
-2. Clone the repository: `git@github.com:danielpringle/dpuk-dev-debugger.git`
-3. Navigate into the plugin folder: `cd dpuk-dev-debugger`
+2. Clone the repository: `git@github.com:danielpringle/wp-local-debug.git`
+3. Navigate into the plugin folder: `cd wp-local-debug`
 4. Run `composer install` to install dependencies
 
 After installation, the `vendor` folder will be created in the plugin root, containing Whoops, Kint, and the autoloader.
@@ -138,7 +138,7 @@ You can enable or disable a wide range of Kint-powered debug examples by editing
 
 ### Adding Custom Functionality
 
-Add your custom code to the `launch()` function in `dpuk-dev-debugger.php`:
+Add your custom code to the `launch()` function in `wp-local-debug.php`:
 
 ```php
 function launch() {

@@ -2,8 +2,8 @@
 ## [2.0.0] - 2026-05-07
 
 ### Changed
-- Plugin renamed to DPUK Dev Debugger
-- Namespace updated to DPUKDevDebugger
+- Plugin renamed to DPUK WP Local Debugger
+- Namespace updated to DPUK\WPLocalDebug
 - All constants standardized to DPUK_DEV_DEBUGGER_*
 - Doc blocks and package tags updated for consistency
 - Improved documentation and code comments

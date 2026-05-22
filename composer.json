@@ -1,5 +1,5 @@
 {
-    "name" 			: "dpuk/dpuk-dev-debugger",
+    "name" 			: "dpuk/wp-local-debug",
     "description" 	: "Development Plugin improving php debugging and error handling.",
     "type"          : "project",
     "keywords" 		: ["wordpress", "wp", "plugin"],

@@ -2,13 +2,13 @@
 /**
  * Exception handling
  *
- * @package     DPUKDevDebugger
+ * @package     DPUK\WPLocalDebug
  * @since       1.0.0
  * @author      Dan Pringle
  * @link        http://www.danielpringle.co.uk
  * @license     GNU General Public License 2.0+
  */
-namespace DPUKDevDebugger;
+namespace DPUK\WPLocalDebug;
 
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
